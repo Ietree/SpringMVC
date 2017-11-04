@@ -45,9 +45,9 @@ http://localhost:8080/welcome
 http://localhost:8080/springmvc/welcome.html
 
 # 处理器映射器HandlerMapping
-## BeanNameUrlHandlerMapping（默认）
+## 1、BeanNameUrlHandlerMapping（默认）
 org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping
-## SimpleUrlHandlerMapping
+## 2、SimpleUrlHandlerMapping
 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
 在springmvc.xml中配置：
 ```
