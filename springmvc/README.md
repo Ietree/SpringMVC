@@ -30,3 +30,20 @@
 <mvc:resources location="/js/" mapping="/js/**"/>
 <mvc:resources location="/css/" mapping="/css/**"/>
 ```
+
+# 前、后台相对路径和绝对路径
+## 1、前台路径
+前台路径的参照路径是：当前web服务器的根，即http://127.0.0.1:8080
+因为 绝对路径 = 参照路径 + 相对路径，所以当前超链接所提交的请求绝对路径是：
+http://localhost:8080/welcome
+<a href="/welcome.html">跳转到欢迎页面</a>
+
+## 2、后台路径
+后台路径的参照路径是：web应用的根路径。
+当前web应用的根路径是：http://localhost:8080/springmvc
+也就是说，现在要求的绝对路径是：参照路径 + 相对路径
+http://localhost:8080/springmvc/welcome.html
+
+
+
+

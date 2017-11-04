@@ -19,7 +19,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	
 	<!-- 解决web.xml中配置/拦截之后不能访问静态资源第二种方法 -->
-	<!-- <mvc:default-servlet-handler/> -->
+	<mvc:default-servlet-handler/>
 	
 	<!-- 解决web.xml中配置/拦截之后不能访问静态资源的第三种方法 -->
 	<!-- 
@@ -34,6 +34,13 @@
 	</bean>
 	
 	<!-- 注册处理器 -->
-	<bean id="/my.html" class="com.ietree.springmvc.firstdemo.MyController" />
+	<!-- 
+	这里要求浏览器必须提交如下绝对路径才能访问到MyController这个资源：
+	这个路径出现在xml文件中，所以是后台路径，而后台路径的参照路径是：web应用的根路径。
+	当前web应用的根路径是：http://localhost:8080/springmvc
+	也就是说，现在要求的绝对路径是：参照路径 + 相对路径
+	http://localhost:8080/springmvc/welcome.html
+	 -->
+	<bean id="/welcome.html" class="com.ietree.springmvc.firstdemo.MyController" />
 	
 </beans>
