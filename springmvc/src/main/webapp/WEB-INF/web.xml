@@ -4,7 +4,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-
+	
+	<!-- 1、当中央调度器中的url-pattern配置问/时，可以解决restful风格的访问路径，但是需要做以下配置，表示访问时不拦截这些静态资源 -->
+	<!-- 
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.jpg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.js</url-pattern>
+	</servlet-mapping>
+	 -->
+	 
 	<!-- 注册中央调度器 -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
@@ -20,7 +40,8 @@
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<!-- 此处不能使用/*，最好不要使用/ -->
-		<url-pattern>*.html</url-pattern>
+		<!-- <url-pattern>*.html</url-pattern> -->
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 </web-app>

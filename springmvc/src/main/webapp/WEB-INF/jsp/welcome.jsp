@@ -10,5 +10,9 @@
 	<h1>Hello Spring MVC!</h1>
 	${message}
 	${requestScope.message}
+	<hr>
+	<img alt="pic1" src="images/1.jpg">
+	<img alt="pic2" src="images/2.jpg">
+	<img alt="pic3" src="images/3.jpg">
 </body>
 </html>
