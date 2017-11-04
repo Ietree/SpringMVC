@@ -1,4 +1,4 @@
-#解决静态资源无法访问的三种方法
+#在web.xml文件中配置拦截为/的时候，解决静态资源无法访问的三种方法
 1、当中央调度器中的url-pattern配置问/时，可以解决restful风格的访问路径，但是需要在web.xml中添加以下配置，表示访问时不拦截这些静态资源
 <servlet-mapping>
 	<servlet-name>default</servlet-name>
