@@ -56,12 +56,12 @@
 			</props>
 		</property>
 		 -->
-		 <property name="urlMap">
-		 	<map>
-		 		<entry key="/welcome.html" value="myController"/>
-		 		<entry key="/test.html" value="myController"/>
-		 	</map>
-		 </property>
+		<property name="urlMap">
+			<map>
+				<entry key="/welcome.html" value-ref="myController" />
+				<entry key="/test.html" value-ref="myController" />
+			</map>
+		</property>
 	</bean>
 	
 </beans>

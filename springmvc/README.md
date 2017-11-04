@@ -52,6 +52,8 @@ org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
 在springmvc.xml中配置：
 ```
 <!-- 注册处理器映射器 -->
+<!-- 注册处理器映射器 -->
+<!-- 注册处理器映射器 -->
 <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 	<!-- 
 	<property name="mappings">
@@ -61,13 +63,20 @@ org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
 		</props>
 	</property>
 	 -->
-	 <property name="urlMap">
-	 	<map>
-	 		<entry key="/welcome.html" value="myController"/>
-	 		<entry key="/test.html" value="myController"/>
-	 	</map>
-	 </property>
+	<property name="urlMap">
+		<map>
+			<entry key="/welcome.html" value-ref="myController" />
+			<entry key="/test.html" value-ref="myController" />
+		</map>
+	</property>
 </bean>
 ```
+# 处理器适配器HandlerAdapter
+## 1、SimpleControllerHandlerAdapter
+
+
+
+## 2、HttpRequestHandlerAdapter
+
 
 
