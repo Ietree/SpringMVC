@@ -41,6 +41,27 @@
 	也就是说，现在要求的绝对路径是：参照路径 + 相对路径
 	http://localhost:8080/springmvc/welcome.html
 	 -->
-	<bean id="/welcome.html" class="com.ietree.springmvc.firstdemo.MyController" />
+	<!-- <bean id="/welcome.html" class="com.ietree.springmvc.firstdemo.MyController" /> -->
+	
+	<!-- 注册处理器 -->
+	<bean id="myController" class="com.ietree.springmvc.firstdemo.MyController" />
+	
+	<!-- 注册处理器映射器 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<!-- 
+		<property name="mappings">
+			<props>
+				<prop key="/welcome.html">myController</prop>
+				<prop key="/test.html">myController</prop>
+			</props>
+		</property>
+		 -->
+		 <property name="urlMap">
+		 	<map>
+		 		<entry key="/welcome.html" value="myController"/>
+		 		<entry key="/test.html" value="myController"/>
+		 	</map>
+		 </property>
+	</bean>
 	
 </beans>

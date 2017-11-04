@@ -31,7 +31,7 @@
 <mvc:resources location="/css/" mapping="/css/**"/>
 ```
 
-# 前、后台相对路径和绝对路径
+# 前、后台相对路径和绝对路径（Servlet中的sendRedirect重定向除外）
 ## 1、前台路径
 前台路径的参照路径是：当前web服务器的根，即http://127.0.0.1:8080
 因为 绝对路径 = 参照路径 + 相对路径，所以当前超链接所提交的请求绝对路径是：
@@ -44,6 +44,30 @@ http://localhost:8080/welcome
 也就是说，现在要求的绝对路径是：参照路径 + 相对路径
 http://localhost:8080/springmvc/welcome.html
 
-
+# 处理器映射器HandlerMapping
+## BeanNameUrlHandlerMapping（默认）
+org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping
+## SimpleUrlHandlerMapping
+org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
+在springmvc.xml中配置：
+```
+<!-- 注册处理器映射器 -->
+<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<!-- 
+	<property name="mappings">
+		<props>
+			<prop key="/welcome.html">myController</prop>
+			<prop key="/test.html">myController</prop>
+		</props>
+	</property>
+	 -->
+	 <property name="urlMap">
+	 	<map>
+	 		<entry key="/welcome.html" value="myController"/>
+	 		<entry key="/test.html" value="myController"/>
+	 	</map>
+	 </property>
+</bean>
+```
 
 
