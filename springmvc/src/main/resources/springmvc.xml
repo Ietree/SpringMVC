@@ -7,8 +7,14 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
+	
+	<!-- 注册视图解析器 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	
 	<!-- 注册处理器 -->
-	<bean id="/my.do" class="com.ietree.springmvc.firstdemo.MyController" />
+	<bean id="/my.html" class="com.ietree.springmvc.firstdemo.MyController" />
 	
 </beans>

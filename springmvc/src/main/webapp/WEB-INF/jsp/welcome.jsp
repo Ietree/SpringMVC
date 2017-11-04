@@ -9,5 +9,6 @@
 <body>
 	<h1>Hello Spring MVC!</h1>
 	${message}
+	${requestScope.message}
 </body>
 </html>

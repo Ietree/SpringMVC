@@ -12,9 +12,11 @@ public class MyController implements Controller
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
     {
         ModelAndView mv = new ModelAndView();
+        // 其底层执行的是request.setAttribute()方法
         mv.addObject("message", "Hello SpringMVC World!");
-        mv.setViewName("/WEB-INF/jsp/welcome.jsp");
+        // 使用视图解析器简化视图路径
+        // mv.setViewName("/WEB-INF/jsp/welcome.jsp");
+        mv.setViewName("welcome");
         return mv;
     }
-
 }
