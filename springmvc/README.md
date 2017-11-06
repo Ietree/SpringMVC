@@ -75,8 +75,67 @@ org.springframework.web.servlet.handler.SimpleUrlHandlerMapping
 ## 1、SimpleControllerHandlerAdapter
 
 
-
 ## 2、HttpRequestHandlerAdapter
+
+
+# 处理器
+## 1、继承自AbstractController类
+
+
+## 2、继承自MultiActionController类
+
+
+# 视图解析器
+
+<!-- 注册视图解析器(视图解析器按照定义顺序选择执行，或者可以设置order属性，大于0的数字) -->
+<!-- 1、内部资源视图解析器InternalResourceViewResolver -->
+```
+<!-- 
+<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/jsp/"></property>
+	<property name="suffix" value=".jsp"></property>
+</bean>
+ -->
+```
+
+<!-- 2、BeanName资源视图解析器BeanNameViewResolver -->
+```
+<!-- <bean id="" class="org.springframework.web.servlet.view.BeanNameViewResolver"/> -->
+```
+<!-- 定义一个内部资源视图 -->
+```
+<!-- 
+<bean id="internalResource" class="org.springframework.web.servlet.view.JstlView">
+	<property name="url" value="/WEB-INF/jsp/welcome.jsp"/>
+</bean>
+ -->
+```
+<!-- 定义一个外部资源视图 -->
+```
+<!-- 
+<bean id="taobao" class="org.springframework.web.servlet.view.RedirectView">
+	<property name="url" value="http://www.taobao.com"/>
+</bean>
+ -->
+```
+
+<!-- 3、Xml资源视图解析器XmlViewResolver -->
+```
+<!-- 
+<bean class="org.springframework.web.servlet.view.XmlViewResolver">
+	<property name="location" value="classpath:myViews.xml"/>
+</bean>
+ -->
+```
+
+<!-- 4、Properties资源视图解析器ResourceBundleViewResolver -->
+```
+<!-- 
+<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+	<property name="basename" value="myViews"/>
+</bean>
+ -->
+```
 
 
 
