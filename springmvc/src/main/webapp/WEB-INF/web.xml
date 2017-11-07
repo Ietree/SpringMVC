@@ -5,6 +5,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
 	<!-- 1、当中央调度器中的url-pattern配置问/时，可以解决restful风格的访问路径，但是需要做以下配置，表示访问时不拦截这些静态资源 -->
 	<!-- 
 	<servlet-mapping>
@@ -44,7 +48,22 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
+	<!-- 注册字符集过滤器，解决字符乱码问题 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 </web-app>
